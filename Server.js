@@ -1,7 +1,16 @@
 const express =require("express");
 const cors =require("cors");
 const app = express();
-app.use(cors());
+const cors = require("cors");
+
+app.use(
+  cors({
+    origin: "https://company-frontend-pqsw.onrender.com",
+    methods: "GET,POST,PUT,PATCH,DELETE",
+    credentials: true
+  })
+);
+
 app.use(express.json());
 
 // ⭐ Company data in a variable
